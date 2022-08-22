@@ -1,7 +1,7 @@
 {
-  "homepage": "https://AIArtGame.github.io/AIArtGamebeta",
-  "name": "react-wordle",
-  "version": "0.1.0",
+  "homepage": "https://aiartgame.github.io/AIArtGameBeta/",
+  "name": "The AI Art Game",
+  "version": "0.2.0",
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
