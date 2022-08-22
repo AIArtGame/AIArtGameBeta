@@ -3,30 +3,32 @@ import Wordle from './components/Wordle'
 
 
 function App() {
-  const [solution, setSolution] = useState(null)
+  const [solution, setSolution] = useState("academy")
   const [website, setWebsite] = useState(null)
 
   useEffect(() => {
-    fetch('http://localhost:3001/solutions')
+    fetch('db.json')
       .then(res => res.json())
       .then(json => {
         // random int between 0 & 14
+        //<img src= {website} alt = "Clue" /> 
         const randomSolution = json[Math.floor(Math.random()*json.length)]
         console.log(randomSolution)
         setSolution(randomSolution.word)
         setWebsite(randomSolution.url)
         
       })
-  }, [setSolution, website])
+  }, [setSolution, website]) 
+
 
   return (
     <div className="App">
       <h1>The AI Art Game</h1>
     
-      <img src= {website} alt = "Clue" />
+       <img src= "https://mj-gallery.com/f7036951-2736-4523-8f0f-e214ae40a29d/grid_0.png" alt = "Clue" /> 
      
       
-      {solution && <Wordle solution={solution} />}
+      {solution && <Wordle solution="Good Luck" />}
     </div>
   )
 }
