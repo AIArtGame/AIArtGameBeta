@@ -28,7 +28,7 @@ function App() {
        <img src= "https://mj-gallery.com/f7036951-2736-4523-8f0f-e214ae40a29d/grid_0.png" alt = "Clue" /> 
      
       
-      {solution && <Wordle solution="Good Luck" />}
+      {solution && <Wordle solution={solution} />}
     </div>
   )
 }
