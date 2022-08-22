@@ -1,6 +1,6 @@
 {
   "homepage": "https://aiartgame.github.io/AIArtGameBeta/",
-  "name": "The AI Art Game",
+  "name": "ai-art-game",
   "version": "0.2.0",
   "private": false,
   "dependencies": {
