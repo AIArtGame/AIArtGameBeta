@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/AIArtGamebeta/static/css/main.e71094a4.css",
+    "main.js": "/AIArtGamebeta/static/js/main.30cc2a86.js",
+    "index.html": "/AIArtGamebeta/index.html",
+    "main.e71094a4.css.map": "/AIArtGamebeta/static/css/main.e71094a4.css.map",
+    "main.30cc2a86.js.map": "/AIArtGamebeta/static/js/main.30cc2a86.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e71094a4.css",
+    "static/js/main.30cc2a86.js"
+  ]
+}
