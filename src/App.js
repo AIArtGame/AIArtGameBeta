@@ -2,23 +2,55 @@ import { useEffect, useState } from 'react'
 import Wordle from './components/Wordle'
 
 
+
+
 function App() {
   const [solution, setSolution] = useState(null)
   const [website, setWebsite] = useState(null)
+  
+   const solutions_url = 'https://aiartgame.github.io/AISolutions/data.json';
+  //const solutions_url = 'http://localhost:3001/solutions';
+//------------------------------------------------------------------------
+ async function getData() {
+
+    const response = await fetch(solutions_url);
+    console.log(response);
+    const predata = await response.json();
+    const data = predata["solutions"]
+    console.log(data);
+    const randomSolution = data[Math.floor(Math.random()*data.length)]
+    console.log(randomSolution)
+    console.log("print3")
+    setSolution(randomSolution.word)
+    setWebsite(randomSolution.url)
+}
+
+
+//---------------------------------------------------------------------
+
+//---------------------------------------------------------------------
+/*
+const getJson = async () => {
+  const { data } = await fetch(solutions_url)
+  .then(res => res.json())
+  .then(json => {
+    // random int between 0 & 14
+    //<img src= {website} alt = "Clue" />
+    //'http://localhost:3001/solutions'
+    const randomSolution = json[Math.floor(Math.random()*json.length)]
+    console.log(randomSolution)
+    console.log("print3")
+    setSolution(randomSolution.word)
+    setWebsite(randomSolution.url)
+    
+  })
+};
+
+getJson();
+*/
 
   useEffect(() => {
-    fetch('https://storage.googleapis.com/theaiartgamesolutions/db.json')
-      .then(res => res.json())
-      .then(json => {
-        // random int between 0 & 14
-        //<img src= {website} alt = "Clue" />
-        //'http://localhost:3001/solutions'
-        const randomSolution = json[Math.floor(Math.random()*json.length)]
-        console.log(randomSolution)
-        setSolution(randomSolution.word)
-        setWebsite(randomSolution.url)
-        
-      })
+   getData();
   }, [setSolution, website]) 
 
 
