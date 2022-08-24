@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/AIArtGameBeta/static/css/main.aad76444.css",
-    "main.js": "/AIArtGameBeta/static/js/main.efde7f37.js",
+    "main.js": "/AIArtGameBeta/static/js/main.67de2461.js",
     "index.html": "/AIArtGameBeta/index.html",
     "main.aad76444.css.map": "/AIArtGameBeta/static/css/main.aad76444.css.map",
-    "main.efde7f37.js.map": "/AIArtGameBeta/static/js/main.efde7f37.js.map"
+    "main.67de2461.js.map": "/AIArtGameBeta/static/js/main.67de2461.js.map"
   },
   "entrypoints": [
     "static/css/main.aad76444.css",
-    "static/js/main.efde7f37.js"
+    "static/js/main.67de2461.js"
   ]
 }
