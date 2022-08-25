@@ -23,6 +23,7 @@ function App() {
     console.log("print3")
     setSolution(randomSolution.word)
     setWebsite(randomSolution.url)
+    console.log(solution.length);
 }
 
 
