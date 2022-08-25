@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import useWordle from '../hooks/useWordle'
 
-export default function Row({ guess, currentGuess }) {
 
+export default function Row({ guess, currentGuess, solution}) {
+console.log(solution)
+  
   if (guess) {
     return (
       <div className="row past">
@@ -20,7 +23,7 @@ export default function Row({ guess, currentGuess }) {
         {letters.map((letter, i) => (
           <div key={i} className="filled">{letter}</div>
         ))}
-        {[...Array(7 - letters.length)].map((_,i) => (
+        {[...Array(solution.length - letters.length)].map((_,i) => (
           <div key={i}></div>
         ))}
       </div>
@@ -28,6 +31,9 @@ export default function Row({ guess, currentGuess }) {
   }
 
 
+
+
+/*
   return (
     <div className="row">
       <div></div>
@@ -37,7 +43,70 @@ export default function Row({ guess, currentGuess }) {
       <div></div>
       <div></div>
       <div></div>
+    
     </div>
   )
-  
+*/
+
+
+
+  if (solution.length === 4) {
+    console.log("444444444444444444")
+  return (
+    <div className="row">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+     
+    </div>
+  )
+  }
+
+
+  if (solution.length === 5) {
+    return (
+      <div className="row">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      
+      </div>
+    )
+    }
+
+
+    if (solution.length === 6) {
+      return (
+        <div className="row">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          
+        </div>
+      )
+      }
+
+
+      if (solution.length === 7) {
+        return (
+          <div className="row">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        )
+        }
+
+
+        
 }

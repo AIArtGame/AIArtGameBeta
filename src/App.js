@@ -3,6 +3,10 @@ import Wordle from './components/Wordle'
 
 
 
+const delay = ms => new Promise(
+  resolve => setTimeout(resolve, ms)
+);  // Function for adding a delay if needed
+
 
 function App() {
   const [solution, setSolution] = useState(null)
@@ -11,19 +15,17 @@ function App() {
    const solutions_url = 'https://aiartgame.github.io/AISolutions/data.json';
   //const solutions_url = 'http://localhost:3001/solutions';
 //------------------------------------------------------------------------
+
  async function getData() {
+ 
 
     const response = await fetch(solutions_url);
-    console.log(response);
     const predata = await response.json();
     const data = predata["solutions"]
-    console.log(data);
     const randomSolution = data[Math.floor(Math.random()*data.length)]
-    console.log(randomSolution)
-    console.log("print3")
     setSolution(randomSolution.word)
     setWebsite(randomSolution.url)
-    console.log(solution.length);
+   
 }
 
 
@@ -52,22 +54,28 @@ getJson();
 
   useEffect(() => {
    getData();
-  }, [setSolution, website]) 
+   
+  }, [setSolution]) 
 
-
+//&& <Row solution={solution} />
   return (
     <div className="App">
       <h1>The AI Art Game</h1>
     
        <img src= {website} alt = "Clue" /> 
      
+     
+      {solution && <Wordle solution={solution} /> }
       
-      {solution && <Wordle solution={solution} />}
     </div>
   )
+
+
 }
 
 export default App
+
+
 
 /* 
 
